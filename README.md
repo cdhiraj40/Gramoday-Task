@@ -6,12 +6,12 @@ You are provided with the following files:
 
 
 i. “Github Browser APIs.postman_collection.json”
-This is a postman collection having the github API(s) (can be accessed by importing “https://github.com/cdhiraj40/Gramoday-Task/blob/main/Github%20Browser%20APIs.postman_collection.json” file in POSTMAN*).
+This is a postman collection having the github API(s) (can be accessed by importing [this](https://github.com/cdhiraj40/Gramoday-Task/blob/main/Github%20Browser%20API) file in POSTMAN*).
 
 
 ii. “Github Browser – Wireframes.pdf”
 This is the wireframe which should be used to generate screens in the android app. The
-components of each screen are shown in the https://github.com/cdhiraj40/Gramoday-Task/blob/main/Github%20Browser%20-%20Wireframes.pdf. The interactions on clicking each button
+components of each screen are shown in the [this](https://github.com/cdhiraj40/Gramoday-Task/blob/main/Github%20Browser%20-%20Wireframes.pdf). The interactions on clicking each button
 are also mentioned.
 
 ## Description:
@@ -21,7 +21,7 @@ on an android app.
 
 App should have the following screens mentioned in the wireframe in file “Github Browser –
 Wireframes.pdf” and using the API(s) provided by github (details on which are provided in
-the postman collection “https://github.com/cdhiraj40/Gramoday-Task/blob/main/Github%20Browser%20APIs.postman_collection.json”)
+[the postman collection](https://github.com/cdhiraj40/Gramoday-Task/blob/main/Github%20Browser%20API))
 
 ## Following screens along with their api integration should be there in the app:
 
@@ -63,5 +63,4 @@ Before installation, please make sure you have already installed the following t
 
 ## Application Link:
 
-Talking about the usability of the app, you can try out beta version for now
-from [here](https://github.com/cdhiraj40/Gramoday-Task/blob/main/app/release/app-release.apk)
+You can install the app from [here](https://github.com/cdhiraj40/Gramoday-Task/blob/main/app/release/app-release.apk)
