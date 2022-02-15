@@ -1,0 +1,5 @@
+    <resources>
+    <string name="action_add_repo">Add New Repository</string>
+    <string name="no_fav_repo_added">Track your favourite repo</string>
+    <string name="no_fav_repo_sub">Click here or Use the + icon\n to add a new repository</string>
+</resources>

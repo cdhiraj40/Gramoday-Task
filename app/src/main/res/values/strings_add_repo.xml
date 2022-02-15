@@ -1,0 +1,6 @@
+<resources>
+    <string name="add_repository_fragment_label">Add Repository</string>
+    <string name="prompt_add_owner_organisation">Enter Owner/Organisation name</string>
+    <string name="prompt_repository_name">Repository Name</string>
+    <string name="add_repo_button_text">Add Repository</string>
+</resources>
