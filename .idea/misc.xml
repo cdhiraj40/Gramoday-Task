@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/layout_background.xml" value="0.21979166666666666" />
+        <entry key="app/src/main/res/layout/empty_fav_list.xml" value="0.26145833333333335" />
+        <entry key="app/src/main/res/layout/fragment_add_repository.xml" value="0.1578125" />
+        <entry key="app/src/main/res/layout/fragment_repository_branch.xml" value="0.2557291666666667" />
+        <entry key="app/src/main/res/layout/fragment_repository_branch_commits.xml" value="0.23489583333333333" />
+        <entry key="app/src/main/res/layout/fragment_repository_branch_issues.xml" value="0.20520833333333333" />
+        <entry key="app/src/main/res/layout/fragment_repository_details.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_repository_list.xml" value="0.21197916666666666" />
+        <entry key="app/src/main/res/layout/repository_branch_commit_item.xml" value="0.23489583333333333" />
+        <entry key="app/src/main/res/layout/repository_branch_issue_item.xml" value="0.20520833333333333" />
+        <entry key="app/src/main/res/layout/repository_branch_item.xml" value="0.2557291666666667" />
+        <entry key="app/src/main/res/layout/repository_list_item.xml" value="0.20364583333333333" />
+        <entry key="app/src/main/res/menu/menu_main.xml" value="0.3645833333333333" />
+        <entry key="app/src/main/res/menu/menu_repository_details.xml" value="0.3645833333333333" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

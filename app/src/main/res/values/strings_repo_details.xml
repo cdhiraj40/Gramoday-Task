@@ -1,0 +1,5 @@
+<resources>
+    <string name="repository_details">Repository Details</string>
+    <string name="action_open_repo_online">Open Repository Online</string>
+    <string name="action_delete_repo">Delete Repository</string>
+</resources>

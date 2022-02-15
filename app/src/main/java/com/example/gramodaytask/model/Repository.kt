@@ -10,9 +10,11 @@ class Repository : Serializable {
     val full_name: String? = null
     val url: String? = null
     val html_url: String? = null
+    val open_issues_count: Int? = null
 
     class OwnerNode : Serializable {
         val avatar_url: String? = null
+        val login: String? = null
         val id: Int? = null
         val repos_url: String? = null
     }

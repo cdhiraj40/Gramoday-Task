@@ -9,17 +9,18 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.gramodaytask.R
 import com.example.gramodaytask.data.entity.RepositoryEntity
+import com.example.gramodaytask.utils.extensions.shareLink
 
-class RepositoryAdapter(
+class RepositoryListAdapter(
     val context: Context,
-    private val repositoryClickDeleteInterface: RepositoryClickDeleteInterface,
+//    private val repositoryClickDeleteInterface: RepositoryClickDeleteInterface,
     private val repositoryClickInterface: RepositoryClickInterface
 ) :
-    RecyclerView.Adapter<RepositoryAdapter.ViewHolder>() {
+    RecyclerView.Adapter<RepositoryListAdapter.ViewHolder>() {
 
-    interface RepositoryClickDeleteInterface {
-        fun onDeleteIconClick(repository: RepositoryEntity)
-    }
+//    interface RepositoryClickDeleteInterface {
+//        fun onDeleteIconClick(repository: RepositoryEntity)
+//    }
 
     interface RepositoryClickInterface {
         fun onRepositoryClick(repository: RepositoryEntity)
@@ -45,12 +46,11 @@ class RepositoryAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        // on below line we are setting data to item of recycler view.
         holder.repositoryTitle.text = allRepositorys[position].repositoryTitle
         holder.repositoryDescription.text = allRepositorys[position].repositoryDescription
 
         holder.repositoryshareIcon.setOnClickListener {
-            repositoryClickDeleteInterface.onDeleteIconClick(allRepositorys.get(position))
+            context.shareLink(allRepositorys[position].repositoryUrl, "Repository Link")
         }
         holder.itemView.setOnClickListener {
             repositoryClickInterface.onRepositoryClick(allRepositorys[position])
@@ -58,6 +58,10 @@ class RepositoryAdapter(
     }
 
     override fun getItemCount(): Int {
+        return allRepositorys.size
+    }
+
+    fun getDataItemCount(): Int {
         return allRepositorys.size
     }
 

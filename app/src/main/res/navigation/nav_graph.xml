@@ -14,6 +14,15 @@
         <action
             android:id="@+id/action_FragmentRepositoryList_to_AddRepositoryFragment"
             app:destination="@id/AddRepositoryFragment" />
+
+        <action
+            android:id="@+id/action_FragmentRepositoryList_to_FragmentRepositoryDetails"
+            app:destination="@id/FragmentRepositoryDetails">
+
+            <argument
+                android:name="repoID"
+                app:argType="integer" />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/AddRepositoryFragment"
@@ -25,4 +34,54 @@
             android:id="@+id/action_AddRepositoryFragment_to_FragmentRepositoryList"
             app:destination="@id/FragmentRepositoryList" />
     </fragment>
+
+    <fragment
+        android:id="@+id/FragmentRepositoryDetails"
+        android:name="com.example.gramodaytask.ui.repository.RepositoryDetailsFragment"
+        android:label="@string/repository_details"
+        tools:layout="@layout/fragment_repository_details">
+
+        <action
+            android:id="@+id/action_FragmentRepositoryDetails_to_FragmentRepositoryList"
+            app:destination="@id/FragmentRepositoryList" />
+
+        <action
+            android:id="@+id/action_FragmentRepositoryDetails_to_RepositoryBranchFragment"
+            app:destination="@id/RepositoryBranchFragment">
+            <argument
+                android:name="repoID"
+                app:argType="integer" />
+        </action>
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/RepositoryBranchFragment"
+        android:name="com.example.gramodaytask.ui.repository.RepositoryBranchFragment"
+        android:label="@string/repository_branch"
+        tools:layout="@layout/fragment_repository_branch">
+
+        <action
+            android:id="@+id/action_FragmentRepositoryDetails_to_RepositoryBranchCommitsFragment"
+            app:destination="@id/RepositoryBranchCommitsFragment">
+            <argument
+                android:name="branchSHA"
+                app:argType="string" />
+            <argument
+                android:name="repoID"
+                app:argType="integer" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/RepositoryBranchCommitsFragment"
+        android:name="com.example.gramodaytask.ui.repository.RepositoryBranchCommitsFragment"
+        android:label="@string/repository_branch_commits"
+        tools:layout="@layout/fragment_repository_branch_commits" />
+
+    <fragment
+        android:id="@+id/RepositoryBranchIssuesFragment"
+        android:name="com.example.gramodaytask.ui.repository.RepositoryBranchIssuesFragment"
+        android:label="@string/repository_branch_issues"
+        tools:layout="@layout/fragment_repository_branch_issues" />
 </navigation>

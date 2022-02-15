@@ -32,4 +32,11 @@ class RepositoryViewModal(application: Application) : AndroidViewModel(applicati
     fun addRepository(note: RepositoryEntity) = viewModelScope.launch(Dispatchers.IO) {
         repository.insert(note)
     }
+
+    suspend fun getRepository(id: Int): RepositoryEntity {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.getRepository(id)
+        }
+        return repository.getRepository(id)
+    }
 }

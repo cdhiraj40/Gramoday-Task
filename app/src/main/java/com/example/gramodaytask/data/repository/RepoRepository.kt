@@ -19,4 +19,7 @@ class RepoRepository(private val repositoryDao: RepositoryDao) {
     suspend fun update(note: RepositoryEntity) {
         repositoryDao.update(note)
     }
+
+    suspend fun getRepository(id: Int): RepositoryEntity =
+        repositoryDao.getRepository(id)
 }

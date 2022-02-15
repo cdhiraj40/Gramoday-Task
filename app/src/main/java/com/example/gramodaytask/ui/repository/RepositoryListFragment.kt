@@ -2,24 +2,24 @@ package com.example.gramodaytask.ui.repository
 
 import android.os.Bundle
 import android.view.*
+import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gramodaytask.R
-import com.example.gramodaytask.adapter.RepositoryAdapter
+import com.example.gramodaytask.adapter.RepositoryListAdapter
 import com.example.gramodaytask.data.entity.RepositoryEntity
 import com.example.gramodaytask.data.viewModal.RepositoryViewModal
 import com.example.gramodaytask.databinding.FragmentRepositoryListBinding
 
-class RepositoryListFragment : Fragment(), RepositoryAdapter.RepositoryClickDeleteInterface,
-    RepositoryAdapter.RepositoryClickInterface {
+class RepositoryListFragment : Fragment(),
+    RepositoryListAdapter.RepositoryClickInterface {
 
     private var _fragmentRepositoryListBinding: FragmentRepositoryListBinding? = null
-
     private val fragmentRepositoryListBinding get() = _fragmentRepositoryListBinding!!
-
     private lateinit var repositoryViewModal: RepositoryViewModal
+    private lateinit var repositoryListAdapter: RepositoryListAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -39,9 +39,9 @@ class RepositoryListFragment : Fragment(), RepositoryAdapter.RepositoryClickDele
         fragmentRepositoryListBinding.repositoryRecyclerView.layoutManager =
             LinearLayoutManager(context)
 
-        val adapter = RepositoryAdapter(requireContext(), this, this)
+        repositoryListAdapter = RepositoryListAdapter(requireContext(), this)
 
-        fragmentRepositoryListBinding.repositoryRecyclerView.adapter = adapter
+        fragmentRepositoryListBinding.repositoryRecyclerView.adapter = repositoryListAdapter
 
         repositoryViewModal = ViewModelProvider(
             this,
@@ -51,7 +51,8 @@ class RepositoryListFragment : Fragment(), RepositoryAdapter.RepositoryClickDele
         repositoryViewModal.allRepositoryEntity.observe(this, { list ->
             list?.let {
                 // on below line we are updating our list.
-                adapter.updateList(it)
+                repositoryListAdapter.updateList(it)
+                checkIfEmpty()
             }
         })
     }
@@ -69,6 +70,13 @@ class RepositoryListFragment : Fragment(), RepositoryAdapter.RepositoryClickDele
         }
     }
 
+    private fun checkIfEmpty() {
+        if (repositoryListAdapter.getDataItemCount() == 0) {
+            fragmentRepositoryListBinding.emptyRepoView.root.visibility = View.VISIBLE
+        } else {
+            fragmentRepositoryListBinding.emptyRepoView.root.visibility = View.GONE
+        }
+    }
 
     override fun onDestroyView() {
         super.onDestroyView()
@@ -92,12 +100,17 @@ class RepositoryListFragment : Fragment(), RepositoryAdapter.RepositoryClickDele
         }
     }
 
-    override fun onDeleteIconClick(repository: RepositoryEntity) {
-        repositoryViewModal.deleteRepository(repository)
-    }
+//    override fun onDeleteIconClick(repository: RepositoryEntity) {
+//        repositoryViewModal.deleteRepository(repository)
+//    }
 
     override fun onRepositoryClick(repository: RepositoryEntity) {
-
-        TODO("Not yet implemented")
+        val bundle = bundleOf(
+            "repoId" to repository.id
+        )
+        findNavController().navigate(
+            R.id.action_FragmentRepositoryList_to_FragmentRepositoryDetails,
+            bundle
+        )
     }
 }

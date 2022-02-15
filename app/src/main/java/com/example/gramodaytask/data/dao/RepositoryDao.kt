@@ -13,9 +13,11 @@ interface RepositoryDao {
     @Delete
     suspend fun delete(repositoryEntity: RepositoryEntity)
 
-
     @Query("Select * from repositoryTable order by id ASC")
     fun getAllRepository(): LiveData<List<RepositoryEntity>>
+
+    @Query("SELECT * FROM repositoryTable  WHERE id=:id ")
+    suspend fun getRepository(id: Int): RepositoryEntity
 
     // below method is use to update the note.
     @Update

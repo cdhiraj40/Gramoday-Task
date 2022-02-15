@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="delete_repository_dialog_title">Delete Repository</string>
+    <string name="yes">Yes</string>
+    <string name="delete_repository_dialog_message">Delete Repository?</string>
+</resources>
